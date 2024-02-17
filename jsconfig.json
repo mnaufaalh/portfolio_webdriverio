@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "helpers/*": [
+                "tests/helpers/*"
+            ],
+            "pageobjects/*": [
+                "tests/pageobjects/*"
+            ],
+            "flows/*": [
+                "tests/flows/*"
+            ],
+            "fixtures/*": [
+                "tests/fixtures/*"
+            ]
+        },
+        "types": [
+            "node",
+            "webdriverio/async",
+            "@wdio/mocha-framework",
+            "expect-webdriverio",
+            "@wdio/browserstack-service"
+        ]
+    }
+}
