@@ -1,15 +1,13 @@
 const projectPath = require('path')
 const androidAppPath = projectPath.join(process.cwd(), "./apps/android/app-stag-release.apk")
 exports.config = {
-    runner: 'local',
     port: 4723,
     specs: [
         './tests/specs/**/**/*.spec.js'
     ],
-    exclude: [
-        // 'path/to/excluded/files'
-    ],
-    maxInstances: 10,
+    suites: {
+        login: ['./tests/specs/login/*.spec.js']
+    },
     capabilities: [
         {
             "platformName": "Android",
@@ -24,10 +22,6 @@ exports.config = {
             'appium:avd': 'Galaxy_S24_API_31',
         }
     ],
-    logLevel: 'info',
-    bail: 0,
-    connectionRetryTimeout: 120000,
-    connectionRetryCount: 3,
     services: [
         [
             'appium',
@@ -42,7 +36,7 @@ exports.config = {
         ]
     ],
     framework: 'mocha',
-    reporters: ['spec'],
+
     mochaOpts: {
         ui: 'bdd',
         timeout: 150000,
