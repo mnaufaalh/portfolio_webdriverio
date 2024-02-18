@@ -6,8 +6,7 @@ exports.config = {
         './tests/specs/**/**/*.spec.js'
     ],
     suites: {
-        login: ['./tests/specs/login/*.spec.js'],
-        consignment: ['./tests/specs/consignment/**/*.spec.js']
+        login: ['./tests/specs/login/*.spec.js']
     },
     capabilities: [
         {
