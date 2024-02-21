@@ -33,10 +33,10 @@
     "@babel/parser": "^7.21.8",
     "@faker-js/faker": "^8.4.1",
     "babel-plugin-module-resolver": "^4.1.0",
-    "chai": "^5.1.0",
+    "chai": "^4.3.7",
     "dayjs": "^1.11.10",
-    "dotenv": "^16.4.4",
-    "got": "^14.2.0",
+    "dotenv": "^16.4.1",
+    "got": "^11.8.6",
     "wdio-rerun-service": "^1.7.8"
   }
 }
