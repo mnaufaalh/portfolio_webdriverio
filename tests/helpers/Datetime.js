@@ -18,7 +18,7 @@ class DateTime {
   }
 
   tomorrowDropOffDate() {
-    return dayjs().tz().add(1, 'day').format('ddd[,]MMM[ ]Do');
+    return dayjs().tz().add(1, 'day').format('ddd[,][ ]MMM[ ]Do');
   }
 }
 

@@ -45,8 +45,12 @@ class Gestures {
       }
     ]);
     // Add a pause, just to make sure the swipe is done
-    await driver.pause(1000);
-  }
-}
+    return await driver.pause(1000);
+  };
+
+  async tap(coordinate) {
+    return await driver.touchAction({ action: 'tap', x: coordinate.x, y: coordinate.y });
+  };
+};
 
 export default new Gestures()
