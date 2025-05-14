@@ -19,7 +19,6 @@ class InputSKUScreen {
     });
     const responseParse = body.data;
     const lengthData = responseParse.length;
-    // product === 'lifestyles' ? randomItem = faker.number.int({ min: 2, max: lengthData - 1 }) : randomItem = faker.number.int(lengthData - 1);
     randomItem = faker.number.int(lengthData - 1);
     const sku = responseParse[randomItem].SKU;
     const display_name = responseParse[randomItem].display_name;

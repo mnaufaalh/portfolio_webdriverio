@@ -34,11 +34,12 @@ class GeneralFlow {
     };
   };
 
-  async submitSellConsignment(accessToken, product, size) {
+  async submitSellConsignment(accessToken, product, size, minPrice) {
+    const afterMinPrice = faker.number.int({ min: 1, max: minPrice });
     const body = {
       product_variant_id: product.id,
-      size_id: size.id,
-      asking_price: faker.number.int({ min: 1, max: 20000 }) * 50000,
+      size_id: size.sizeId,
+      asking_price: afterMinPrice * 50000,
       quantity: 1,
       box_condition: 'SEMPURNA',
       sneakers_condition: 'BARU'
@@ -96,7 +97,7 @@ class GeneralFlow {
 
   async shippingInformation(accessToken) {
     const response = await got({
-      url: `${process.env.URL_AWS}users/shipping`,
+      url: `${process.env.URL_LUMEN}users/shipping`,
       method: 'GET',
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -110,7 +111,7 @@ class GeneralFlow {
 
   async idProvince(accessToken, country) {
     const response = await got({
-      url: `${process.env.URL_AWS}postalcode/province`,
+      url: `${process.env.URL_LUMEN}postalcode/province`,
       method: 'GET',
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -134,7 +135,7 @@ class GeneralFlow {
       product_addon: 'FLAT_RATE'
     };
     const response = await got({
-      url: `${process.env.URL_AWS}couriers`,
+      url: `${process.env.URL_LUMEN}couriers`,
       method: 'POST',
       headers: {
         Authorization: `Bearer ${accessToken}`
